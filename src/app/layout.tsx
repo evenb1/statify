@@ -4,10 +4,10 @@ import localFont from 'next/font/local'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const circularBlack = localFont({
-  src: '../public/fonts/CircularStd-Black.otf',
-  variable: '--font-circular-black',
-})
+// const circularBlack = localFont({
+//   // src: '../public/fonts/CircularStd-Black.otf',
+//   // variable: '--font-circular-black',
+// })
 
 export const metadata = {
   title: 'Statify',
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${circularBlack.variable}`}>
+    <html lang="en" >
       <body className={inter.className}>{children}</body>
     </html>
   )
