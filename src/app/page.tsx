@@ -1,8 +1,8 @@
-import Hero from '@/components/Hero'
-import Features from '@/components/Features'
-import Statistics from '@/components/Statistics'
-import CTA from '@/components/CTA'
-import Footer from '@/components/Footer'
+import Hero from '@/app/components/Hero'
+import Features from '@/app/components/Features'
+import Statistics from '@/app/components/Statistics'
+import CTA from '@/app/components/CTA'
+import Footer from '@/app/components/Footer'
 
 export default function Home() {
   return (
