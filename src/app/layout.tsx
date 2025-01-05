@@ -10,8 +10,8 @@ const circularBlack = localFont({
 })
 
 export const metadata = {
-  title: 'Spotify Stats - Discover Your Music DNA',
-  description: 'Uncover insights about your listening habits with our Spotify stats app.',
+  title: 'Statify',
+  description: 'Uncover insights about your listening habits with our Statify app.',
 }
 
 export default function RootLayout({
