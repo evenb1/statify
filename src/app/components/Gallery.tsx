@@ -41,7 +41,11 @@ const imageVariants = {
 }
 
 export default function Gallery() {
-  
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
+
   return (
     <section ref={ref} className="pb-20 px-4 overflow-hidden">
       <motion.h2
