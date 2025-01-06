@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { AirplayIcon as Spotify } from 'lucide-react'
+import { FaSpotify } from 'react-icons/fa6'
 
 export default function SpotifyLogin() {
   const [ref, inView] = useInView({
@@ -11,7 +12,7 @@ export default function SpotifyLogin() {
   })
 
   return (
-    <section ref={ref} className="py-20 px-4 relative overflow-hidden">
+    <section ref={ref} className="py-44 px-4 relative overflow-hidden">
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.h2
           className="font-circular-black text-4xl md:text-5xl mb-6 gradient-text"
@@ -37,7 +38,7 @@ export default function SpotifyLogin() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Spotify className="mr-2" /> Log in with Spotify
+          <FaSpotify className="mr-2" /> Log in with Spotify
         </motion.button>
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>

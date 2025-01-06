@@ -3,15 +3,17 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, BarChart2 } from 'lucide-react'
 import Image from 'next/image'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 
 const images = [
-  '/placeholder.svg?height=1080&width=1920',
-  '/placeholder.svg?height=1080&width=1920',
-  '/placeholder.svg?height=1080&width=1920'
+
 ]
 
-export default function Hero({ loginSectionRef }) {
+interface HeroProps {
+  loginSectionRef: React.RefObject<HTMLDivElement | null>
+}
+
+export default function Hero({ loginSectionRef }: HeroProps) {
   const [currentImage, setCurrentImage] = useState(0)
 
   useEffect(() => {
@@ -38,10 +40,10 @@ export default function Hero({ loginSectionRef }) {
           Uncover fascinating insights about your listening habits with our powerful Spotify stats analyzer.
         </p>
         <motion.button
-          className="bg-gray-800 text-white font-circular-black py-3 px-8 rounded-full text-lg flex items-center justify-center mx-auto hover:bg-gray-700 transition-colors duration-300"
+          className="bg-green-600 text-white font-circular-black py-3 px-8 rounded-full text-lg flex items-center justify-center mx-auto hover:bg-gray-700 transition-colors duration-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => loginSectionRef.current.scrollIntoView({ behavior: 'smooth' })}
+          onClick={() => loginSectionRef.current?.scrollIntoView({ behavior: 'smooth' })}
         >
           Get Started <ArrowRight className="ml-2" />
         </motion.button>
@@ -69,4 +71,3 @@ export default function Hero({ loginSectionRef }) {
     </section>
   )
 }
-

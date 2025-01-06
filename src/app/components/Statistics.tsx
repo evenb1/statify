@@ -11,12 +11,18 @@ const stats = [
   { value: 200, label: 'Countries', suffix: '+' },
 ]
 
-function CountUp({ end, duration = 2, suffix = '' }) {
+interface CountUpProps {
+  end: number
+  duration?: number
+  suffix?: string
+}
+
+function CountUp({ end, duration = 2, suffix = '' }: CountUpProps) {
   const [count, setCount] = useState(0)
 
   useEffect(() => {
-    let startTime = null
-    const animate = (timestamp) => {
+    let startTime: number | null = null
+    const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp
       const progress = Math.min((timestamp - startTime) / (duration * 1000), 1)
       setCount(Math.floor(progress * end))
@@ -42,7 +48,7 @@ export default function Statistics() {
   })
 
   return (
-    <section ref={ref} className="py-20 px-4 bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-lg">
+    <section ref={ref} className="py-28 px-4 bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-lg">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -61,7 +67,7 @@ export default function Statistics() {
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="font-circular-black text-4xl md:text-5xl gradient-text mb-2">
+              <div className="font-circular-black text-4xl text-green-600 md:text-5xl gradient-text mb-2">
                 {inView ? <CountUp end={stat.value} suffix={stat.suffix} /> : '0'}
               </div>
               <div className="text-gray-300">{stat.label}</div>
@@ -72,4 +78,3 @@ export default function Statistics() {
     </section>
   )
 }
-
