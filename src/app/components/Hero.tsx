@@ -6,7 +6,9 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
 const images = [
-
+  '/kendrick.jpg?height=1080&width=1920',
+  '/sza.jpeg?height=1080&width=1920',
+  '/tems.png?height=1080&width=1920'
 ]
 
 interface HeroProps {
