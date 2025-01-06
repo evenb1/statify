@@ -6,7 +6,13 @@ import { cn } from "@/lib/utils";
 export function LampDemo() {
   return (
     <LampContainer>
-    
+      <motion.h1
+        
+        }}
+        className="mt-10 bg-gradient-to-br from-slate-300 to-slate-500 py-5 bg-clip-text text-center text-2xl font-medium tracking-tight text-transparent md:text-5xl"
+      >
+        Build lamps <br /> the right way
+      </motion.h1>
     </LampContainer>
   );
 }
