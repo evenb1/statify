@@ -1,15 +1,15 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { AirplayIcon as Spotify } from 'lucide-react'
-import { FaSpotify } from 'react-icons/fa6'
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { FaSpotify } from 'react-icons/fa6';
+import { signIn } from 'next-auth/react';
 
 export default function SpotifyLogin() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
   return (
     <section ref={ref} className="py-44 px-4 relative overflow-hidden">
@@ -37,12 +37,12 @@ export default function SpotifyLogin() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
+          onClick={() => signIn('spotify')}
         >
           <FaSpotify className="mr-2" /> Log in with Spotify
         </motion.button>
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
     </section>
-  )
+  );
 }
-
