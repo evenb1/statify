@@ -5,7 +5,9 @@ import { cn } from "@/lib/utils";
 
 export function LampDemo() {
   return (
- 
+    <LampContainer>
+    
+    </LampContainer>
   );
 }
 
