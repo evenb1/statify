@@ -58,7 +58,21 @@ export default function Gallery() {
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
       >
-        
+        {images.map((src, index) => (
+          <motion.div
+            key={index}
+            className="relative aspect-square overflow-hidden "
+            variants={imageVariants}
+          >
+            <Image
+              src={src}
+              alt={`Gallery image ${index + 1}`}
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-600 ease-in-out transform hover:scale-110"
+            />
+          </motion.div>
+        ))}
       </motion.div>
     </section>
   )
