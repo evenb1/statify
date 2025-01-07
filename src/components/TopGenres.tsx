@@ -12,17 +12,18 @@ export default function TopGenres({ timeRange }: { timeRange: string }) {
 
   useEffect(() => {
     const fetchGenres = async () => {
-      setIsLoading(true);
-      try {
-        const res = await fetch(`/api/spotify/top-genres?timeRange=${timeRange}`);
-        const data = await res.json();
-        setGenres(data);
-      } catch (error) {
-        console.error('Failed to fetch top genres:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+        try {
+          const res = await fetch(`/api/spotify/top-genres`);
+          if (!res.ok) {
+            throw new Error(`HTTP error! Status: ${res.status}`);
+          }
+          const data = await res.json();
+          setGenres(data);
+        } catch (error) {
+          console.error('Failed to fetch top genres:', error);
+        }
+      };
+      
 
     fetchGenres();
   }, [timeRange]);
