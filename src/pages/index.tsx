@@ -4,19 +4,20 @@ import Statistics from '@/components/Statistics'
 import SpotifyLogin from '@/components/SpotifyLogin'
 import Footer from '@/components/Footer'
 import Gallery from '@/components/Gallery'
-import Testimonials from '@/components/Testimonials'
+import { useRef } from 'react'
 
 export default function Home() {
+      const loginSectionRef = useRef<HTMLDivElement | null>(null);
+    
   return (
     <main className="bg-black text-white min-h-screen">
       <div className="bg-pattern-dots">
-        <Hero />
+        <Hero loginSectionRef={loginSectionRef} />
         <Features />
       </div>
       <Gallery />
       <div className="bg-pattern-waves">
         <Statistics />
-        <Testimonials />
         <SpotifyLogin />
       </div>
       <Footer />
