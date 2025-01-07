@@ -1,12 +1,12 @@
 "use client";
-import Hero from "@/app/components/Hero";
-import Features from "@/app/components/Features";
-import Statistics from "@/app/components/Statistics";
-import Footer from "@/app/components/Footer";
+import Hero from "@/components/Hero";
+import Features from "@/components/Features";
+import Statistics from "@/components/Statistics";
+import Footer from "@/components/Footer";
 import { useRef } from "react";
-import Gallery from "./components/Gallery";
-import SpotifyLogin from "./components/SpotifyLogin";
-import { LampDemo } from "./components/ui/Lamp";
+import Gallery from "../components/Gallery";
+import SpotifyLogin from "../components/SpotifyLogin";
+import { LampDemo } from "../components/ui/Lamp";
 
 export default function Home() {
   const loginSectionRef = useRef<HTMLDivElement | null>(null);
